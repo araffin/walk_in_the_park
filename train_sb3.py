@@ -88,7 +88,7 @@ def main(_):
     chkpt_dir = 'saved/checkpoints'
     # last_checkpoint = checkpoints.latest_checkpoint(chkpt_dir)
 
-    train_freq = 1
+    train_freq = 8
     hyperparameters = dict(
         learning_starts=FLAGS.start_training,
         train_freq = train_freq,
