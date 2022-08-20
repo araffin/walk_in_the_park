@@ -95,6 +95,7 @@ def main(_):
         gradient_steps=FLAGS.utd_ratio * train_freq,
         tensorboard_log="saved/runs/",
         use_sde=True,
+        # gamma=0.98,
         sde_sample_freq=8,
         use_sde_at_warmup=False,
         learning_rate=7.3e-4,
