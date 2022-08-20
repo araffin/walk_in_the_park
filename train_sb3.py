@@ -93,10 +93,14 @@ def main(_):
         learning_starts=FLAGS.start_training,
         train_freq = train_freq,
         gradient_steps=FLAGS.utd_ratio * train_freq,
-        use_sde=False,
+        tensorboard_log="saved/runs/",
+        use_sde=True,
         sde_sample_freq=8,
         use_sde_at_warmup=False,
-        tensorboard_log="saved/runs/",
+        learning_rate=7.3e-4,
+        ent_coef="auto_0.1",
+        tau=0.02,
+        policy_kwargs=dict(log_std_init=-3, net_arch=[400, 300])
     )
 
     eval_callback = EvalCallback(eval_env, eval_freq=FLAGS.eval_interval)
