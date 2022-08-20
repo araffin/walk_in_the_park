@@ -109,7 +109,7 @@ def main(_):
     # checkpoint_callback = CheckpointCallback(chkpt_dir, save_freq=FLAGS.eval_interval)
 
     model = TQC("MlpPolicy", env, verbose=1, **hyperparameters)
-    try
+    try:
         model.learn(total_timesteps=FLAGS.max_steps, callback=[eval_callback, wandb_callback])
     except KeyboardInterrupt:
         pass
