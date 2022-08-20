@@ -90,7 +90,7 @@ def main(_):
 
     last_checkpoint = checkpoints.latest_checkpoint(chkpt_dir)
 
-    if last_checkpoint is None:
+    if last_checkpoint is None or False:
         start_i = 0
         replay_buffer = ReplayBuffer(env.observation_space, env.action_space,
                                      FLAGS.max_steps)
